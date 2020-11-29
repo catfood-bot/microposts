@@ -37,7 +37,7 @@ class UsersController extends Controller
         
         $user->loadRelationshipCounts();
         
-        $followings = $user->followings()->pagenate(10);
+        $followings = $user->followings()->paginate(10);
         
         return view('users.followings', [
             'user' => $user,
@@ -52,7 +52,7 @@ class UsersController extends Controller
         
         $user->loadRelationshipCounts();
         
-        $followers = $user->followers()->pagenate(10);
+        $followers = $user->followers()->paginate(10);
         
         return view('users.followers', [
             'user' => $user,
